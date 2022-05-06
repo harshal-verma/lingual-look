@@ -31,9 +31,10 @@
 }
 
 .search {
-    width: 43%;
+    width: 45%;
 }
 
 .select {
-    width: 43%;
+    width: 45%;
+    text-align: left;
 }

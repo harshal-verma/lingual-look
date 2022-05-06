@@ -1,22 +1,21 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { TextField } from '@mui/material';
-import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import categories from '../../data/category';
 import './Header.css';
 
-const Header = ({ setCategory, category, word, setWord }) => {
+const Header = ({ setCategory, category, word, setWord, LightTheme }) => {
 
     const darkTheme = createTheme({
         palette: {
             primary: {
-                main: '#fff',
+                main: LightTheme ? "#000" : "#fff",
             },
-            mode: 'dark',
+            type: LightTheme ? "light" : "dark",
         },
     });
 
@@ -34,14 +33,16 @@ const Header = ({ setCategory, category, word, setWord }) => {
                     <TextField id="standard-basic" label="Search a Word" className="search" variant="standard" value={word} onChange={(e) => setWord(e.target.value)}>
                     </TextField>
                     <FormControl variant="standard" className="select">
-                        <InputLabel id="demo-simple-select-standard-label">Language</InputLabel>
+                        <InputLabel>Language</InputLabel>
                         <Select
-                            labelId="demo-simple-select-standard-label"
-                            id="demo-simple-select-standard"
-                            onChange={(e) => handleChange(e)}
+                            labelId="demo-simple-select-helper-label"
+                            id="demo-simple-select-helper"
                             value={category}
+                            label="Language"
+                            onChange={handleChange}
                         >
                             {categories.map((option) => (<MenuItem key={option.label} value={option.label}>{option.value}</MenuItem>))}
+
                         </Select>
                     </FormControl>
                 </ThemeProvider>
