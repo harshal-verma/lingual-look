@@ -27,7 +27,6 @@ function App() {
   }));
 
   useEffect(() => {
-    // dictionaryApi();
     const dictionaryApi = async () => {
       try {
         const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
@@ -41,7 +40,7 @@ function App() {
   }, [category, word]);
 
   return (
-    <div className="App" style={{ height: '100vh', backgroundColor: "#282c34", color: 'white' }}>
+    <div className="App" style={{ height: '100vh', backgroundColor: LightTheme ? "#282c34" : "#fff", color: LightTheme ? "white" : 'black', transition: "all 0.7s linear" }}>
       <Container
         maxWidth="md"
         style={{ display: "flex", flexDirection: "column", height: "100vh", justifyContent: 'space-evenly' }}>

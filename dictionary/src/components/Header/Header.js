@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 import categories from '../../data/category';
 import './Header.css';
 
-const Header = ({ setCategory, category, word, setWord, LightTheme }) => {
+const Header = ({ setCategory, setMeanings, category, word, setWord, LightTheme }) => {
 
     const darkTheme = createTheme({
         palette: {
@@ -22,8 +22,8 @@ const Header = ({ setCategory, category, word, setWord, LightTheme }) => {
     const handleChange = (e) => {
         setCategory(e.target.value);
         setWord("");
+        setMeanings([]);
     }
-
 
     return (
         <div>
