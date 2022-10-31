@@ -47,7 +47,7 @@ function App() {
         <div
           style={{ position: "absolute", top: 0, right: 10, paddingTop: 10 }}
         >
-          <span>{LightTheme ? "Dark" : "Light"} Mode</span>
+          <span>{LightTheme ? "Light" : "Dark"} Mode</span>
           <DarkMode checked={LightTheme} onChange={() => setLightTheme(!LightTheme)} />
         </div>
         <Header category={category} setCategory={setCategory} word={word} setWord={setWord} LightTheme={LightTheme} />
