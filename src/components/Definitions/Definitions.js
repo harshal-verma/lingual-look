@@ -29,14 +29,14 @@ const Definitions = ({ word, category, LightTheme, meanings }) => {
                                     color: LightTheme ? "white" : "black",
                                 }}
                             >
-                                <b>{def.definition}</b>
+                                <b>{def?.definition}</b>
                                 <hr style={{ backgroundColor: "black", width: "100%" }} />
-                                {def.example && (
+                                {def?.example && (
                                     <span>
                                         <b>Example :</b> {def.example}
                                     </span>
                                 )}
-                                {def.synonyms && (
+                                {def?.synonyms.length === 0 ? "" : (
                                     <span>
                                         <b>Synonyms :</b> {def.synonyms.map((s) => `${s}, `)}
                                     </span>

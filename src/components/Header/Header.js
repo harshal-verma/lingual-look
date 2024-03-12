@@ -27,13 +27,17 @@ const Header = ({ setCategory, setMeanings, category, word, setWord, LightTheme 
 
     return (
         <div>
-            <span className="title">{word ? word : "Word Hunt"}</span>
+            <span className="title">{word ? word : "Lingual Look"}</span>
             <div className="inputs">
                 <ThemeProvider theme={darkTheme}>
-                    <TextField id="standard-basic" label="Search a Word" className="search" variant="standard" value={word} onChange={(e) => setWord(e.target.value)}>
+                    <TextField id="standard-basic" style={{
+                        textColor: darkTheme ? 'black' : 'white',
+                    }} label="Search a Word" className="search" variant="standard" value={word} onChange={(e) => setWord(e.target.value)}>
                     </TextField>
-                    <FormControl variant="standard" className="select">
-                        <InputLabel>Language</InputLabel>
+                    <FormControl variant="standard" className="select" style={{
+                        color: darkTheme ? 'black' : 'white',
+                    }}>
+                        <InputLabel >Language</InputLabel>
                         <Select
                             labelId="demo-simple-select-helper-label"
                             id="demo-simple-select-helper"
